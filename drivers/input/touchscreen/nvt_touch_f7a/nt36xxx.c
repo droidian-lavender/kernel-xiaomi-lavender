@@ -1030,7 +1030,7 @@ static void nvt_ts_work_func(struct work_struct *work)
 			input_report_abs(ts->input_dev, ABS_MT_POSITION_X, input_x);
 			input_report_abs(ts->input_dev, ABS_MT_POSITION_Y, input_y);
 #if ENABLE_TOUCH_SZIE
-			input_report_abs(ts->input_dev, ABS_MT_TOUCH_MAJOR, input_w);
+			//input_report_abs(ts->input_dev, ABS_MT_TOUCH_MAJOR, input_w);
 #endif
 			input_report_abs(ts->input_dev, ABS_MT_PRESSURE, input_p);
 
@@ -1048,7 +1048,7 @@ static void nvt_ts_work_func(struct work_struct *work)
 		if (press_id[i] != 1) {
 			input_mt_slot(ts->input_dev, i);
 #if ENABLE_TOUCH_SZIE
-			input_report_abs(ts->input_dev, ABS_MT_TOUCH_MAJOR, 0);
+			//input_report_abs(ts->input_dev, ABS_MT_TOUCH_MAJOR, 0);
 #endif
 			input_report_abs(ts->input_dev, ABS_MT_PRESSURE, 0);
 			input_mt_report_slot_state(ts->input_dev, MT_TOOL_FINGER, false);
@@ -1427,7 +1427,7 @@ static int32_t nvt_ts_probe(struct i2c_client *client, const struct i2c_device_i
 
 #if TOUCH_MAX_FINGER_NUM > 1
 #if ENABLE_TOUCH_SZIE
-	input_set_abs_params(ts->input_dev, ABS_MT_TOUCH_MAJOR, 0, 255, 0, 0);
+	//input_set_abs_params(ts->input_dev, ABS_MT_TOUCH_MAJOR, 0, 255, 0, 0);
 #endif
 	input_set_abs_params(ts->input_dev, ABS_MT_POSITION_X, 0, ts->abs_x_max-1, 0, 0);
 	input_set_abs_params(ts->input_dev, ABS_MT_POSITION_Y, 0, ts->abs_y_max-1, 0, 0);
@@ -1708,7 +1708,7 @@ static int32_t nvt_ts_suspend(struct device *dev)
 	for (i = 0; i < ts->max_touch_num; i++) {
 		input_mt_slot(ts->input_dev, i);
 #if ENABLE_TOUCH_SZIE
-		input_report_abs(ts->input_dev, ABS_MT_TOUCH_MAJOR, 0);
+		//input_report_abs(ts->input_dev, ABS_MT_TOUCH_MAJOR, 0);
 #endif
 		input_report_abs(ts->input_dev, ABS_MT_PRESSURE, 0);
 		input_mt_report_slot_state(ts->input_dev, MT_TOOL_FINGER, 0);
