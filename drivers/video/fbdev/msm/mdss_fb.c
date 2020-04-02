@@ -2209,7 +2209,7 @@ void mdss_fb_set_backlight(struct msm_fb_data_type *mfd, u32 bkl_lvl)
 	bool ad_bl_notify_needed = false;
 	bool bl_notify_needed = false;
 
-	printk("%s\n", __func__);
+	//printk("%s\n", __func__);
 	if ((((mdss_fb_is_power_off(mfd) && mfd->dcm_state != DCM_ENTER)
 		|| !mfd->allow_bl_update) && !IS_CALIB_MODE_BL(mfd)) ||
 		mfd->panel_info->cont_splash_enabled) {

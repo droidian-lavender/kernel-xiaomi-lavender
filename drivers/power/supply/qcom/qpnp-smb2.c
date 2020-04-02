@@ -256,7 +256,7 @@ static int smb2_parse_dt(struct smb2 *chip)
 						"qcom,batteryless-platform");
 
 	if (hwc_check_global){
-		pr_err("sunxing get global set fcc max 2.3A");
+		pr_debug("sunxing get global set fcc max 2.3A");
 		chg->batt_profile_fcc_ua = 2300000;
 	}else{
 	rc = of_property_read_u32(node,
@@ -1058,7 +1058,7 @@ static int smb2_batt_get_prop(struct power_supply *psy,
 	case POWER_SUPPLY_PROP_CAPACITY:
 		rc = smblib_get_prop_batt_capacity(chg, val);
 		#ifdef XIAOMI_CHARGER_RUNIN
-		pr_err("lct battery_capacity =%d\n", val->intval);
+		pr_devel("lct battery_capacity =%d\n", val->intval);
 		#endif
 		#ifdef CONFIG_CHARGER_RUNIN
 		runin_work(chg, val);
