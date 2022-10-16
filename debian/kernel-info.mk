@@ -8,7 +8,7 @@
 VARIANT = android
 
 # Kernel base version
-KERNEL_BASE_VERSION = 4.4.192
+KERNEL_BASE_VERSION = 4.4.192-1
 
 # The kernel cmdline to use
 KERNEL_BOOTIMAGE_CMDLINE = console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.avb_version=1.0 androidboot.vbmeta.avb_version=1.0 console=tty0
@@ -27,25 +27,23 @@ DEVICE_FULL_NAME = Xiaomi Redmi Note 7
 KERNEL_DEFCONFIG = lavender_halium_defconfig
 
 # Whether to include DTBs with the image. Use 0 (no) or 1.
-KERNEL_IMAGE_WITH_DTB = 0
+KERNEL_IMAGE_WITH_DTB = 1
 
 # Path to the DTB
 # If you leave this undefined, an attempt to find it automatically
 # will be made.
-# KERNEL_IMAGE_DTB = arch/arm64/boot/dts/qcom/sdm660-mtp-overlay.dtb
-
+KERNEL_IMAGE_DTB = arch/arm64/boot/dts/qcom/sdm660-mtp_f7a.dtb
 # Whether to include a DTB Overlay. Use 0 (no) or 1.
 KERNEL_IMAGE_WITH_DTB_OVERLAY = 1
 
 # Path to the DTB overlay.
 # If you leave this undefined, an attempt to find it automatically
 # will be made.
-KERNEL_IMAGE_DTB_OVERLAY = arch/arm64/boot/dts/qcom/sdm660-mtp_f7a.dtb
-
+KERNEL_IMAGE_DTB_OVERLAY = arch/arm64/boot/dts/qcom/sdm660-mtp-overlay.dtbo
 # Whether to include the DTB Overlay into the kernel image
 # Use 0 (no, default) or 1.
 # dtbo.img will always be shipped in the linux-bootimage- package.
-KERNEL_IMAGE_WITH_DTB_OVERLAY_IN_KERNEL = 0
+KERNEL_IMAGE_WITH_DTB_OVERLAY_IN_KERNEL = 1
 
 # Path to a specifc configuration file for mkdtboimg.
 # The default is to leave it undefined.
