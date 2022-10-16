@@ -1,5 +1,12 @@
 linux-android-xiaomi-lavender (0.0.0+git20220816140854.c4094db.halium.9.0) halium-9.0; urgency=medium
 
+  [ Berbascum ]
+  * commit: 4edd389fcb801f1d911dbb5fbc15abd8526c9450
+  * lavender: defconfig: enable CONFIG_OVERLAY_FS
+  * debian/kernel-info.mk: Changes on dtb configuration.
+
+ -- Berbascum <berbascum@ticv.cat>  Sun, 16 Oct 2022 05:10:00 +0200
+
   [ FakeShell ]
   * add debian files and change localversion just for the hell of it
 
