@@ -1,14 +1,19 @@
-linux-android-xiaomi-lavender (0.0.0+git20220816140854.c4094db.halium.9.0) halium-9.0; urgency=medium
+linux-android-xiaomi-lavender (0.0.0+git20220816140854.c4094db.halium.9.0+git20230214135329.207aca7.halium.9.0) halium-9.0; urgency=medium
 
-  [ Berbascum ]
-  * commit: 4edd389fcb801f1d911dbb5fbc15abd8526c9450
-  * lavender: defconfig: enable CONFIG_OVERLAY_FS
-  * debian/kernel-info.mk: Changes on dtb configuration.
+  [ Bardia Moshiri ]
+  * add droidian.lvm.prefer for fastbootable images
+  * add a proper local version
+  * disable flashing by default
+  * add control file
+  * delete debian/files
 
- -- Berbascum <berbascum@ticv.cat>  Sun, 16 Oct 2022 05:10:00 +0200
+  [ berbascum ]
+  * Edit configs in kernel-info.mk and lavender_halium_debconf files to correctly build a working boot.img with dtb.
+  * Updated changelog with the changes of previous commit 4edd389fcb801f1d911dbb5fbc15abd8526c9450
 
   [ FakeShell ]
   * add debian files and change localversion just for the hell of it
+  * change toolchain to gcc and remove apparmor flags
 
   [ root ]
   * add debian files and change localversion just for the hell of it
@@ -4734,5 +4739,5 @@ linux-android-xiaomi-lavender (0.0.0+git20220816140854.c4094db.halium.9.0) haliu
   [ Yajun Li ]
   * hab: import/export between remote buffer and dmafd
 
- -- FakeShell <fakeshell@bardia.tech>  Tue, 16 Aug 2022 10:08:54 -0400
+ -- Bardia Moshiri <fakeshell@bardia.tech>  Tue, 14 Feb 2023 17:11:29 +0318
 
